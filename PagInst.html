@@ -11,6 +11,7 @@
 </head>
 
 <body id="body">
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg" id="nav">
         <div class="container-fluid">
             <img class="navbar-brand" src="img/logo.png" alt="logo do site" id="logo">
@@ -21,12 +22,14 @@
             </ul>
         </div>
     </nav>
+
     <main class="container-fluid">
 
         <div class="row text-center py-5">
             <h1>(Nome da Instituição)</h1>
         </div>
 
+        <!-- Atribuidor de média -->
         <section class="row justify-content-center p-5 m-1" id="sectNota">
             <h2>Média <a href="javascript:;" id="slide1">v</a></h2>
             <form action="javascript:;" id="nota" class="row justify-content-evenly align-items-center">
@@ -35,11 +38,13 @@
             </form>
         </section>
 
+        <!-- Professores -->
         <section class="p-5 my-3" id="sectProfs">
             <h2>Professores <a href="javascript:;" id="slide2">v</a></h2>
             <div id="profs">
-                <div class="row justify-content-beetwen p-2 g-2" id="profsExist">
-                </div>
+                <div class="row justify-content-beetwen p-2 g-2" id="profsExist"></div>
+
+                <!-- Adicionar professor -->
                 <div class="row justify-content-center">
                     <div class="col-6 col-md-3 text-center">
                         <form class="needs-validation" novalidate>
@@ -52,16 +57,21 @@
                         </form>
                     </div>
                 </div>
+
             </div>
         </section>
 
+        <!-- Adicionando turma -->
         <section class="p-5 my-3" id="sectNovaTurma">
             <h2>Nova Turma <a href="javascript:;" id="slide3">v</a></h2>
             <br><br>
             <div class="row justify-content-center" id="novaTurma">
                 <form class="fw-bold" action="javascript:;" id="formTurma">
+
                     <label class="form-label" for="profs">Professor: </label>
+                    <!-- É auto-preenchido pelo JS -->
                     <select class="form-select" name="profs" id="itemForm"></select>
+
                     <label class="form-label" for="profs">Matéria: </label>
                     <select class="form-select" name="mat" id="itemForm">
                         <option value="nan">Selecione a matéria</option>
@@ -74,6 +84,7 @@
                         <option value="quim">Química</option>
                         <option value="ingl">Inglês</option>
                     </select>
+                    
                     <label class="form-label" for="turma">Nome da Turma: </label>
                     <input class="form-control" type="text" placeholder="Digite o nome da turma" id="itemForm"
                         name="turma">

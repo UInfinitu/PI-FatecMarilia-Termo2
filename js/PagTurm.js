@@ -1,3 +1,4 @@
+// Variaveis para os gráficos (não sabia se tinha como fazer uma só pra todos)
 var myChartGlobal1 = criarGrafico('myChart1', [$('#mat1').val(), $('#mat2').val(), $('#mat3').val()], ['rgb(60, 166, 174)', 'rgb(47, 123, 129)', 'rgb(176, 195, 199)']);
 var myChartGlobal2 = criarGrafico('myChart2', [$('#mat1').val(), $('#mat2').val(), $('#mat3').val()], ['rgb(60, 166, 174)', 'rgb(47, 123, 129)', 'rgb(176, 195, 199)']);
 var myChartGlobal3 = criarGrafico('myChart3', [$('#mat1').val(), $('#mat2').val(), $('#mat3').val()], ['rgb(60, 166, 174)', 'rgb(47, 123, 129)', 'rgb(176, 195, 199)']);
@@ -111,6 +112,7 @@ function carregarFuncoes(ev) {
         });
     });
 
+    // Pra substituir o padrão pelo nome da turma
     var urlParams = new URLSearchParams(window.location.search);
     var nomeTurma = urlParams.get('nomeTurma');
     if (nomeTurma) {
