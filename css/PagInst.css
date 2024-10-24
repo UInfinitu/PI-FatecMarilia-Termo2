@@ -1,36 +1,6 @@
-#body{
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-section{
-    background-color: #e2e2e2;
-    border-radius: 6px;
-    box-shadow: #000 0 1px 6px;
-}
-
-#nav{
-    background-color: #3ca6ae;
-    box-shadow: #000 0 2px 10px;
-}
-
-#logo{
-    width: 10em;
-}
-
 main h1{
     font-size: 46px;
 }
-
-#navItens li a{
-    text-shadow: #000 1px 1px 4px;
-    color: #ccc;
-}
-
-#navItens li a:hover{
-    text-decoration: underline;
-    text-shadow: #000 1px 0 4px;
-}
-
 
 .profLink{
     background-color: #3ca6ae;
