@@ -1,3 +1,19 @@
+/* Estilos para a página toda */
+* {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    letter-spacing:normal;
+}
+
+#homePage{
+    background-color: #5f5e5d;
+    background-image: url(../img/FundoHome.png);
+    width: 100%;
+}
+
+/* Estilos da Navbar */ 
 #imgLogin{
     width: 3em;
     filter: drop-shadow(1px 1px 4px #fff);
@@ -8,7 +24,6 @@
     align-items: center;
     text-decoration: none;
 }
-
 
 #txtLogin{
     text-shadow: #fff 1px 1px 4px;
@@ -23,27 +38,52 @@
     text-shadow: #fff 1px 0 4px;
 }
 
+/* Montando o corpo da homepage */
+#imgHome{
+    opacity: 0.55;
+    align-items: start;
+    width: 100%;
+}
+
 .cubo{
-    border: 3px solid #3ca6ae;
-    background-color: rgb(246, 247, 248);
+    text-align: justify;
+    color: #f5f5f5;
+    border: 3px solid #288a87;
+    background-color: #5f5e5d;
     border-radius: 6px;
 }
 
-#container{
-    background-color: #3ca6ae;
-    border-radius: 16px;
-    text-decoration: none;
-    color: white;
-    font-size: 24px;
-}
-
-#container:hover{
-    background-color: #2f7b81;
-}
-
-.img{
+.cubo h4{
     text-align: center;
-    padding: 25px;
+}
+
+#btnlogin{
+    padding: 1rem 2rem;
+    border-radius: 16px;
+    background-color: #288a87;
+    border: 2px solid #171717;    
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
+}
+
+#btnlogin::before{
+    content: '';
+    position: absolute;
+    background-color: #171717;
+    width: 0%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.5s ease;
+
+}
+
+#btnlogin:hover{
+    background-color: #034f73;
 }
 
 div a{
@@ -52,6 +92,7 @@ div a{
     border-radius: 50%;
     text-align: center;
 }
+/* Final do corpo da homepage */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap');
 
@@ -62,22 +103,15 @@ div a{
     --color-neutral-40: #f5f5f5;
 
 }
-
-* {
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    letter-spacing: 1px;
-}
-
+/*
 main {
     height: 80vh;
 }
+*/
 
 footer {
     width: 100%;
-    color: var(--color-neutral-40);
+    color: #f5f5f5;
 }
 
 .footer-link {
@@ -85,20 +119,21 @@ footer {
 }
 
 #footer_content {
-    background-color: var(--color-neutral-10);
+    font-size: small;
+    background-color: #5f5e5d;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    padding: 3rem 3.5rem;
+    padding: 0.5rem 0.5rem;
 }
 
-#footer_contacts h1 {
-    margin-bottom: 0.75rem;
+#footer_contacts h5 {
+    margin-bottom: 0.3rem;
 }
 
 #footer_social_media {
     display: flex;
-    gap: 2rem;
-    margin-top: 1.5rem;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
 } 
 
 #footer_social_media .footer-link {
@@ -135,23 +170,24 @@ footer {
 .footer-list {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.1rem;
     list-style: none;
 }
 
 .footer-list .footer-link {
     color: var(--color-neutral-30);
-    transition: all 0.4s;
+    transition: all 0.2s;
+    text-decoration: none;
 }
 
 .footer-list .footer-link:hover {
-    color: #7f37c9;
+    color: #034f73;
 }
 
 #footer_subscribe {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 0.5rem;
 }
 
 #footer_subscribe p {
@@ -167,12 +203,14 @@ footer {
 
 #input_group input {
     all: unset;
-    padding: 0.75rem;
+    padding: 0.2rem;
     width: 100%;
+    background-color: #ccc;
+    border-radius: 4px;
 }
 
 #input_group button {
-    background-color: #7f37c9;
+    background-color: #034f73;
     border: none;
     color: var(--color-neutral-40);
     padding: 0px 1.25rem;
@@ -192,14 +230,35 @@ footer {
     justify-content: center;
     background-color: var(--color-neutral-0);
     font-size: 0.9rem;
-    padding: 1.5rem;
+    padding: 0.5rem 1.0rem;
     font-weight: 100;
 }
+
+/* Footer */
+.footer_section {
+    position: relative;
+    text-align: center;
+    background-image: linear-gradient( to right, #000, #034f73, #288a87, #6cf3ca, #fff);
+    box-shadow: #ccc 0 2px 10px;
+    
+  }
+
+  .footer_section p {
+    color: #000000;
+    padding: 1em 0;
+    margin: 0;
+  }
+
+  .footer_section p a {
+    color: inherit;
+  }
+
+/* Fim footer*/
 
 @media screen and (max-width: 768px) {
     #footer_content {
         grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
+        gap: 0.5rem;
     }
 }
 
