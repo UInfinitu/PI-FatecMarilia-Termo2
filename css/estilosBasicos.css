@@ -1,6 +1,6 @@
 #body{
     font-family: Arial, Helvetica, sans-serif;
-    background-color: rgba(191, 191, 191, 0.6);
+    background: radial-gradient(circle, #651C70 10%, #352A66 60%, #034F73 80%);
 }
 
 section{
@@ -26,4 +26,15 @@ section{
 #navItens li a:hover{
     text-decoration: underline;
     text-shadow: #fff 1px 0 4px;
+}
+
+#botao{
+    background-color: #288a87;
+    color: #fff;
+    transition: 500ms;
+}
+
+#botao:hover{
+    background-color: #034f73;
+    transition: 500ms;
 }

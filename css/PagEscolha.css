@@ -1,14 +1,6 @@
 #cards{
     gap: 1em;
-}
-
-#btnLogin{
-    background-color: #288a87;
-    color: #fff;
-}
-
-#btnLogin:hover{
-    background-color: #034f73;
+    max-width: 540px;
 }
 
 .cartao{
