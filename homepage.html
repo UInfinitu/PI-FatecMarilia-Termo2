@@ -21,39 +21,43 @@
   <nav class="navbar navbar-expand-lg" id="nav">
     <div class="container-fluid mr-5">
       <img class="navbar-brand" src="img/logo.png" alt="logo do site" id="logo">
-      <a class="navbar-nav" href="poslogin.html" id="linkLogin"> <!-- Redireciona para a página de login -->
+      <!-- Redireciona para a página de login -->
+      <a class="navbar-nav" href="poslogin.html" id="linkLogin"> 
         <p class="nav-item m-0" id="txtLogin">Login</p>
         <img class="nav-item" src="img/login.png" alt="" id="imgLogin">
       </a>
     </div>
   </nav>
 
-  <div class="container-fluid">
-    <div class="row" style="height:450px">
+  <div id="homePage" class="container-fluid">
+    <div class="row" style="height:480px">
 
-      <div class="col-sm-8" style="background-color:rgb(78, 78, 77);">
-        <img src="img/red.png">
+      <div class="col-sm-8">
+        <img id="imgHome" src="img/homeInicio02-removebg.png">
       </div>
 
       <!-- Caixa de texto do lado da imagem -->
-      <div class="col-sm-4 pt-5" style="background-color:rgb(84, 83, 81);">
+      <div class="col-sm-4 pt-5">
         <div class="cubo p-3 m-3">
-          <p>Somos um grupo que deseja melhorar a experiência de alunos e responsáveis em relação a clareza das notas de provas, tornando elas mais visuais e destrinchadas para, assim, ser de maior entendimento os pontos fortes e fracos do aluno em relação à aquela determinada matéria.</p>
+          <h4>Boletim OnLine</h4>
+          <p>Sistema para acompanhamento escolar de notas e frequências pelos nossos alunos e responsáveis, além de acompanhamento administrativo da Instituição e validação de aproveitamento escolar pelos professores e coordenadores.</p>
+          <!--<p>Somos um grupo que deseja melhorar a experiência de alunos e responsáveis em relação a clareza das notas de provas, tornando elas mais visuais e destrinchadas para, assim, ser de maior entendimento os pontos fortes e fracos do aluno em relação à aquela determinada matéria.</p> -->
         </div>
-
+      
+        <!-- Botão Acessar agora abaixo do cubo -->  
         <div class="row d-flex justify-content-center">
-          <a id="container" href="poslogin.html" class="col-6 p-2">Acessar agora</a>
+          <a id="btnlogin" href="poslogin.html" class="col-6 p-2">Acessar agora</a>
         </div>
       </div>
 
     </div>
   </div>
 
-
+  <!-- Início do footer -->
   <footer>
     <div id="footer_content">
       <div id="footer_contacts">
-        <h1>Redes Sociais</h1>
+        <h5>Redes Sociais</h5>
         <p>Siga-nos</p>
 
         <!-- Icones das redes sociais -->
@@ -70,12 +74,19 @@
             <i class="fa-brands fa-whatsapp"></i>
           </a>
         </div>
+        <p>Nos mande um e-mail, ficaremos felizes em atendê-lo.</p>
+        <div id="input_group">
+          <input type="email" id="email">
+          <button>
+            <i class="fa-regular fa-envelope"></i>
+          </button>
+        </div>
       </div>
 
-      <!-- Provavelmente tudo vai ser alterado -->
+      <!-- Alterar os hrefs para as devidas páginas -->
       <ul class="footer-list">
         <li>
-          <h3>Serviços</h3>
+          <h5>Serviços</h5>
         </li>
         <li>
           <a href="#" class="footer-link">Gerar notas</a>
@@ -90,7 +101,7 @@
 
       <ul class="footer-list">
         <li>
-          <h3>Informações</h3>
+          <h5>Informações</h5>
         </li>
         <li>
           <a href="#" class="footer-link">Acessibilidade</a>
@@ -102,26 +113,31 @@
       </ul>
 
       <div id="footer_subscribe">
-        <h3>O que fazemos</h3>
-
+        <h5>Nossa missão</h5>
         <p>
-          Simplificamos ações normais acadêmicas em prol de um melhor entendemento.
-        <p>Nos mande um e-mail, ficaremos felizes em atendê-lo.</p>
+          Facilitar a atuação das empresas do ramo educacional, trazendo ganho de performance.
         </p>
 
-        <div id="input_group">
-          <input type="email" id="email">
-          <button>
-            <i class="fa-regular fa-envelope"></i>
-          </button>
-        </div>
+        
       </div>
     </div>
 
     <div id="footer_copyright">
+      <footer class="footer_section">
+        <div class="container">
+          <p>
+            &copy; 2024 - Powered by: Grupo Airazor
+          </p>
+        </div>
+      </footer>
+    </div>
+    <!--
+    <div id="footer_copyright">
+      <p>&copy; <span id="displayYear"></span> Todos os direitos reservados por Airazor</p>
       &#169
       2024 Todos direitos reservados
     </div>
+    -->
   </footer>
 </body>
 
