@@ -1,0 +1,20 @@
+#cards{
+    gap: 1em;
+}
+
+#btnLogin{
+    background-color: #288a87;
+    color: #fff;
+}
+
+#btnLogin:hover{
+    background-color: #034f73;
+}
+
+.cartao{
+    box-shadow: 1px 1px 4px #000;
+}
+
+#linkLogin{
+    text-decoration: none;
+}
