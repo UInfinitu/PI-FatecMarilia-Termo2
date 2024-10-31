@@ -57,7 +57,7 @@
     text-align: center;
 }
 
-#btnlogin{
+#botao{
     padding: 1rem 2rem;
     border-radius: 16px;
     background-color: #288a87;
@@ -69,7 +69,7 @@
     text-decoration: none;
 }
 
-#btnlogin::before{
+#botao::before{
     content: '';
     position: absolute;
     background-color: #171717;
@@ -82,11 +82,11 @@
 
 }
 
-#btnlogin:hover{
+#botao:hover{
     background-color: #034f73;
 }
 
-div a{
+footer div a{
     width: 50px;
     height: 50px;
     border-radius: 50%;
