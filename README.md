@@ -1,4 +1,4 @@
-# Portfólio do projeto desenvolvido ao longo do primeiro semestre do curso de Desenvolvimento de Software Multiplataforma da Fatec Marília.
+# Portfólio do projeto desenvolvido ao longo do primeiro e do segundo semestre do curso de Desenvolvimento de Software Multiplataforma da Fatec Marília.
 
 ## O projeto trata de um sistema escolar onde alunos poderão ver suas notas de uma forma mais detalhada, pois é possível ver o desempenho dele conforme a matéria aplicada na prova, para assim, esse estudante poder focar seus estudos onde apresentou dificuldade.
 
