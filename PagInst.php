@@ -1,3 +1,9 @@
+<?php
+    include "php/funcoes.php";
+
+    autenticar_admin();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
