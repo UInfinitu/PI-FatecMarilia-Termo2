@@ -22,14 +22,14 @@
     </header>
 
     <main class="d-flex justify-content-center">
-        <form id="login" class="col-sm-6 col-md-5 col-lg-4">
+        <form action="php/validar.php" method="POST" id="login" class="col-sm-6 col-md-5 col-lg-4">
             <h1 class="text-center mb-4">Login</h1>
-            <input class="form-control mb-3" type="text" placeholder="Usuário" id="user">
-            <input class="form-control mb-4" type="password" placeholder="Senha" id="senha">
-            <button id="botao" class="btn col-12">Entrar</button>
+            <input class="form-control mb-3" type="text" placeholder="Usuário" id="user" name="user">
+            <input class="form-control mb-4" type="password" placeholder="Senha" id="senha" name="senha">
+            <button id="botao" class="btn col-12" type="submit">Entrar</button>
         </form>
     </main>
-    
+
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/poslogin.js"></script>
 </body>

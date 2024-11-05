@@ -40,7 +40,6 @@ h1 {
 }
 
 #botao:hover {
-    background: #288a87;
     color: transparent;
     transition: 300ms;
 }
