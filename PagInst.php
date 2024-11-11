@@ -12,10 +12,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Área da Instituição</title>
-    <link rel="stylesheet" href="css/PagInst.css">
-    <link rel="stylesheet" href="css/estilosBasicos.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/PagInst.css">
+    <link rel="stylesheet" href="css/estilosBasicos.css">
+        
 </head>
 
 <body id="body">
@@ -33,18 +34,12 @@
 
     <main class="container-fluid">
 
-        <div class="row text-center py-5">
+        <div id="admin" class="row text-center py-5">
             <h1>(Nome da Instituição)</h1>
+            <h2>Área administrativa</h2>
+            <h3>Manutenção cadastral</h3>
         </div>
 
-        <!-- Atribuidor de média -->
-        <section class="row justify-content-center p-5 m-1" id="sectNota">
-            <h2>Média <a href="javascript:;" id="slide1">v</a></h2>
-            <form action="javascript:;" id="nota" class="row justify-content-evenly align-items-center">
-                <label class="form-label col-9" for="media">Atribuir média escolar: </label>
-                <input class="form-control col-3" type="number" name="media" id="media" max="10" min="0">
-            </form>
-        </section>
 
         <!-- Professores -->
         <section class="p-5 my-3" id="sectProfs">
@@ -57,10 +52,15 @@
                     <div class="col-6 col-md-3 text-center">
                         <form class="needs-validation" novalidate>
                             <div class="input-group flex-nowrap">
-                                <input class="form-control" type="text" id="novoProfNome" placeholder="Novo Professor"
-                                    required minlength="4" maxlength="29">
-                                <button class="btn" id="adicionarProf" type="reset">+</button>
+                                <input class="form-control" type="text" id="novoProfNome" placeholder="Novo Professor" required minlength="4" maxlength="29">
+                                
                             </div>
+                            <div class="input-group flex-nowrap">
+                                <label class="form-label" for="turma">Professor coordenador: </label>
+                                <input type="checkbox">
+                                
+                            </div>
+                            <button class="btn" id="adicionarProf" type="reset">Incluir</button>
                             <div class="invalid-feedback"></div>
                         </form>
                     </div>
@@ -104,6 +104,15 @@
             </div>
         </section>
 
+        <!-- Atribuidor de média -->
+        <section class="row justify-content-center p-5 m-1" id="sectNota">
+            <h2>Média <a href="javascript:;" id="slide1">v</a></h2>
+            <form action="javascript:;" id="nota" class="row justify-content-evenly align-items-center">
+                <label class="form-label col-9" for="media">Atribuir média escolar: </label>
+                <input class="form-control col-3" type="number" name="media" id="media" max="10" min="0">
+            </form>
+        </section>
+        
     </main>
 
     <script src="js/jquery-3.7.1.min.js"></script>

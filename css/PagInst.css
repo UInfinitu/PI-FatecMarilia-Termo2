@@ -4,6 +4,10 @@ main h1 #menuInst{
 
 }
 
+#admin{
+    color: aliceblue;
+}
+
 .profLink{
     background-color: #3ca6ae;
     box-shadow: #000 2px 2px 6px;
