@@ -2,6 +2,7 @@
     include "php/funcoes.php";
 
     autenticar_admin();
+    
 ?>
 
 <!DOCTYPE html>
@@ -103,110 +104,6 @@
             </div>
         </section>
 
-        <section>
-            <h2>Cadastrar Aluno</h2>
-            <form action="">
-                <div>
-                    <label for="nome">Nome: </label>
-                    <input type="text" name="nome" required>
-                </div>
-                <div>
-                    <label for="email">Email: </label>
-                    <input type="email" name="email" required>
-                </div>
-                <div>
-                    <button type="button">Adicionar Responsável</button>
-                </div>
-                <div>
-                    <button type="submit">Cadastrar</button>
-                </div>
-            </form>
-        </section>
-
-        <section>
-            <h2>Cadastrar Responsável</h2>
-            <form action="">
-                <div>
-                    <label for="nome">Nome: </label>
-                    <input type="text" name="nome" required>
-                </div>
-                <div>
-                    <label for="email">Email: </label>
-                    <input type="email" name="email" required>
-                </div>
-                <div>
-                    <button type="submit">Cadastrar</button>
-                </div>
-            </form>
-        </section>
-
-        <section>
-            <h2>Cadastrar Professor</h2>
-            <form action="">
-                <div>
-                    <label for="nome">Nome: </label>
-                    <input type="text" name="nome" required>
-                </div>
-                <div>
-                    <label for="email">Email: </label>
-                    <input type="email" name="email" required>
-                </div>
-                <div>
-                    <label for="titulacao">Titulação: </label>
-                    <select name="titulacao">
-                        <option value="nan" selected>Selecione sua titulação</option>
-                        <option value="ng">Não-Graduado</option>
-                        <option value="g">Graduado</option>
-                        <option value="m">Mestre</option>
-                        <option value="d">Doutor</option>
-                    </select>
-                </div>
-                <div>
-                    <button type="submit">Cadastrar</button>
-                </div>
-            </form>
-        </section>
-
-        <section>
-            <h2>Cadastrar Disciplina</h2>
-            <form action="">
-                <div>
-                    <label for="nome">Nome: </label>
-                    <input type="text" name="nome" required>
-                </div>
-                <div>
-                    <label for="carga">Carga horário: </label>
-                    <input type="number" name="carga" required>
-                </div>
-                <div>
-                    <label for="media">Média para passar: </label>
-                    <input type="number" name="media" max="10" min="0" required>
-                </div>
-                <div>
-                    <button type="button">Adicionar Conteúdo</button>
-                </div>
-                <div>
-                    <button type="submit">Cadastrar</button>
-                </div>
-            </form>
-        </section>
-
-        <section>
-            <h2>Cadastrar Conteúdo</h2>
-            <form action="">
-                <div>
-                    <label for="nome">Nome: </label>
-                    <input type="text" name="nome" required>
-                </div>
-                <div>
-                    <label for="carga">Carga horário: </label>
-                    <input type="number" name="carga" required>
-                </div>
-                <div>
-                    <button type="submit">Cadastrar</button>
-                </div>
-            </form>
-        </section>
     </main>
 
     <script src="js/jquery-3.7.1.min.js"></script>
