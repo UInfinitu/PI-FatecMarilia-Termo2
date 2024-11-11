@@ -1,5 +1,11 @@
-main h1{
+main h1 #menuInst{
     font-size: 46px;
+    
+
+}
+
+#admin{
+    color: aliceblue;
 }
 
 .profLink{
@@ -82,3 +88,4 @@ h2{
 #adicionarProf:hover{
     background-color: #2f7b81;
 }
+

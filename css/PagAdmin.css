@@ -1,0 +1,108 @@
+/*-------Estilo para as páginas de Menu (principal e usuários)-----------*/
+
+.menu-Container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    text-align: center;
+    border-radius: 5px;
+/*    padding: 10px;*/
+    
+}
+
+#menuAdm {
+    background-color: #b0c7b4;
+    opacity: 0.85;
+    width: 40%;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    text-decoration: none;
+}
+
+.menu-Card{
+    width: 85%;
+    vertical-align: middle;
+    border-radius: 5px;
+    padding: 10px;
+    
+}
+
+.menu-Card a{
+    text-align: center;
+    background-color: #6cf3ca;
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #000; 
+    border-bottom:3px solid #EDEDED; 
+    align-items: center;
+    font-size: large;
+}
+
+.menu-Card a:hover { 
+    background-color:#D6D6D6;
+    color: #363535;
+}
+
+/*-------Estilo para a página de manutenção da Administração -------------------*/
+
+.cabeca, #cad_pro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#cabecalho {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+form {
+    font-size: 14px;
+    border: 2px solid rgb(128, 128, 128);
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #a3f3db;
+    justify-content: center;
+}
+
+.labeln{
+    padding: 2px;
+
+}
+
+.labeln a{
+    text-decoration: none;
+    color: #363535;
+
+}
+
+/*-------Estilo para o final de todas as páginas (Footer)---------------------*/
+
+footer div {
+    margin-top: 80px;
+    color: #fff;
+    font-size: 12px;
+    background-color: #363535;
+    
+}
+
+.col {
+    float: left;
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
+}
+
+.col-6{
+    width: 50%;
+}
+
+/*------Final para os estilos de rodapé --------------------------*/

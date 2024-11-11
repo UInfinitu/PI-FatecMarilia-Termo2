@@ -46,6 +46,7 @@
 }
 
 .cubo{
+    display: flex;
     text-align: justify;
     color: #f5f5f5;
     border: 3px solid #288a87;
@@ -86,7 +87,7 @@
     background-color: #034f73;
 }
 
-footer div a{
+footer div a{    
     width: 50px;
     height: 50px;
     border-radius: 50%;
