@@ -1,11 +1,3 @@
-/*-------Estilo para as páginas de Menu (principal e usuários)-----------*/
-
-#imgPosB{
-    right: 0px;
-    text-align: center;
-    width: 800px;
-}
-
 .menu-Container{
     display: flex;
     align-items: center;
@@ -98,25 +90,3 @@ form {
     color: #363535;
     font-size: 18px;
 }
-
-/*-------Estilo para o final de todas as páginas (Footer)---------------------*/
-
-footer div {
-    color: #000;
-    font-size: 12px;
-    background-image: linear-gradient( to right, #000, #034f73, #288a87, #6cf3ca, #fff);
-}
-
-.col {
-    margin-top: 2em;
-    float: left;
-    padding-left: var(--gutter);
-    padding-right: var(--gutter);
-}
-
-.col-12 p{
-    margin-top: 1em;
-    text-align: center;
-}
-
-/*------Final para os estilos de rodapé --------------------------*/

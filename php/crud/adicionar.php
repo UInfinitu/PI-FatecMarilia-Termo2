@@ -1,13 +1,25 @@
 <?php
-    function adicionar($tabela, $listacampos, $listavalores){
-        include "banco/conexao.php";
+    function adicionar($tabela, $campos, $listavalores){
+        include "../banco/conexao.php";
+
+        $listacampos = explode(",", $campos);
 
         $listaPlaceholders = [];
         $listaValoresSeguros = [];
 
-        $sql  = "INSERT INTO $tabela (";
-        $sql .= implode(",", $listacampos);
-        $sql .= ") VALUES (";
+        $sql = "SELECT MAX(codigo) AS ultimo_id FROM $tabela";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        if ($result != NULL){
+            $novo_id = $result['ultimo_id'] + 1;
+        } else{
+            $novo_id = 0;
+        }
+
+        $sql  = "INSERT INTO $tabela (codigo, ";
+        $sql .= $campos;
+        $sql .= ") VALUES ($novo_id, ";
         for ($i = 0; $i < count($listacampos); $i++) {
             $listaPlaceholders[$i] = ":$listacampos[$i]";
         }

@@ -17,11 +17,7 @@ section{
 #logo{
     width: 10em;
 }
-/*
-#logoN{
-    width: 20em;
-}
-*/
+
 #navItens li a{
     text-shadow: #fff 1px 1px 4px;
     color: #034f73;
@@ -45,4 +41,26 @@ section{
 
 #admin{
     color: aliceblue;
+}
+
+a{
+    text-decoration: none;
+}
+
+#footerCopy div {
+    color: #000;
+    font-size: 12px;
+    background-image: linear-gradient( to right, #000, #034f73, #288a87, #6cf3ca, #fff);
+}
+
+#txtFooter {
+    margin-top: 2em;
+    float: left;
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
+}
+
+#txtFooter p{
+    margin-top: 1em;
+    text-align: center;
 }

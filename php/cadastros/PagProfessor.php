@@ -1,17 +1,12 @@
 <?php
-    include "php/funcoes.php";
-/*
-    autenticar_admin();
-*/    
-    include "php/cabecalho.php";
+    include "../funcoes.php";
+    /*
+            autenticar_admin();
+    */
+    include "../cabecalho.php";
 ?>
 
-    <main class="container-fluid gx-0">
-
-        <div class="row text-center py-4">
-            <!-- <h1>(Nome da Instituição)</h1> -->
-        </div>
-
+    <main class="container-fluid gx-0 my-5">
         <div class="container-fluid gx-0 menu-Container" id="menuAdm">
             <div id="cabecalho">
                 <p><h4>Menu Admin</h4>
@@ -57,11 +52,11 @@
     </main>
   
     <?php
-        include "php/rodape.php";
+        include "../rodape.php";
     ?>
 
-    <script src="js/jquery-3.7.1.min.js"></script>
-    <script src="js/PagInst.js"></script>
+    <script src="../../js/jquery-3.7.1.min.js"></script>
+    <script src="../../js/PagInst.js"></script>
 </body>
 
 </html>

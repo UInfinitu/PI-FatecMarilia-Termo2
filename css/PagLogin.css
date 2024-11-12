@@ -43,3 +43,17 @@ h1 {
     color: transparent;
     transition: 300ms;
 }
+
+#botaoRetorno{
+    background-color: #288a87;
+    border-radius: 8px;
+    border: none;
+    transition: 500ms;
+    color: #fff;
+    text-decoration: none;
+}
+
+#botaoRetorno:hover{
+    background-color: #034f73;
+    transition: 500ms;
+}

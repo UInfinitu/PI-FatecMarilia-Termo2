@@ -17,33 +17,37 @@ USE `boletim` ;
 -- Table `boletim`.`Usuario`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `boletim`.`Usuario` (
-  `idUsuario` INT NOT NULL,
+  `codigo` INT NOT NULL,
   `loginUsuario` VARCHAR(45) NOT NULL,
   `senhaUsuario` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`idUsuario`)
+  PRIMARY KEY (`codigo`)
 ) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
 -- Table `boletim`.`Modalidade`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `boletim`.`Modalidade` (
-  `idModalidade` INT NOT NULL,
-  `identificadorModalidade` VARCHAR(45) NOT NULL,
+  `codigo` INT NOT NULL,
   `tipoModalidade` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`idModalidade`)
+  PRIMARY KEY (`codigo`)
 ) ENGINE = InnoDB;
+
+INSERT INTO `boletim`.`Modalidade` (codigo, tipoModalidade) VALUES (0, "Ensino Fundamental 1");
+INSERT INTO `boletim`.`Modalidade` (codigo, tipoModalidade) VALUES (1, "Ensino Fundamental 2");
+INSERT INTO `boletim`.`Modalidade` (codigo, tipoModalidade) VALUES (2, "Ensino Médio");
 
 -- -----------------------------------------------------
 -- Table `boletim`.`Turma`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `boletim`.`Turma` (
-  `idTurma` INT NOT NULL,
-  `Modalidade_idModalidade` INT NOT NULL,
-  PRIMARY KEY (`idTurma`, `Modalidade_idModalidade`),
-  INDEX `fk_Turma_Modalidade1_idx` (`Modalidade_idModalidade` ASC),
+  `codigo` INT NOT NULL,
+  `identificadorTurma` CHAR(2) NOT NULL,
+  `Modalidade_codigo` INT NOT NULL,
+  PRIMARY KEY (`codigo`, `Modalidade_codigo`),
+  INDEX `fk_Turma_Modalidade1_idx` (`Modalidade_codigo` ASC),
   CONSTRAINT `fk_Turma_Modalidade1`
-    FOREIGN KEY (`Modalidade_idModalidade`)
-    REFERENCES `boletim`.`Modalidade` (`idModalidade`)
+    FOREIGN KEY (`Modalidade_codigo`)
+    REFERENCES `boletim`.`Modalidade` (`codigo`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION
 ) ENGINE = InnoDB;
@@ -52,16 +56,16 @@ CREATE TABLE IF NOT EXISTS `boletim`.`Turma` (
 -- Table `boletim`.`Aluno`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `boletim`.`Aluno` (
-  `matriculaAluno` INT NOT NULL,
+  `codigo` INT NOT NULL,
   `nomeAluno` VARCHAR(45) NOT NULL,
   `emailAluno` VARCHAR(45) NOT NULL,
-  `Turma_idTurma` INT NOT NULL,
-  `Turma_Modalidade_idModalidade` INT NOT NULL,
-  PRIMARY KEY (`matriculaAluno`, `Turma_idTurma`, `Turma_Modalidade_idModalidade`),
-  INDEX `fk_Aluno_Turma1_idx` (`Turma_idTurma` ASC, `Turma_Modalidade_idModalidade` ASC),
+  `Turma_codigo` INT NOT NULL,
+  `Turma_Modalidade_codigo` INT NOT NULL,
+  PRIMARY KEY (`codigo`, `Turma_codigo`, `Turma_Modalidade_codigo`),
+  INDEX `fk_Aluno_Turma1_idx` (`Turma_codigo` ASC, `Turma_Modalidade_codigo` ASC),
   CONSTRAINT `fk_Aluno_Turma1`
-    FOREIGN KEY (`Turma_idTurma` , `Turma_Modalidade_idModalidade`)
-    REFERENCES `boletim`.`Turma` (`idTurma` , `Modalidade_idModalidade`)
+    FOREIGN KEY (`Turma_codigo` , `Turma_Modalidade_codigo`)
+    REFERENCES `boletim`.`Turma` (`codigo` , `Modalidade_codigo`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION
 ) ENGINE = InnoDB;
@@ -70,26 +74,26 @@ CREATE TABLE IF NOT EXISTS `boletim`.`Aluno` (
 -- Table `boletim`.`Responsavel`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `boletim`.`Responsavel` (
-  `idResponsavel` INT NOT NULL,
+  `codigo` INT NOT NULL,
   `nomeResponsavel` VARCHAR(45) NOT NULL,
   `emailResponsavel` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`idResponsavel`)
+  PRIMARY KEY (`codigo`)
 ) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
 -- Table `boletim`.`Professor`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `boletim`.`Professor` (
-  `idProfessor` INT NOT NULL,
+  `codigo` INT NOT NULL,
   `nomeProfessor` VARCHAR(45) NOT NULL,
   `emailProfessor` VARCHAR(45) NOT NULL,
   `titulacao` VARCHAR(45) NOT NULL,
-  `Professor_idProfessor` INT NOT NULL,
-  PRIMARY KEY (`idProfessor`, `Professor_idProfessor`),
-  INDEX `fk_Professor_Professor1_idx` (`Professor_idProfessor` ASC),
+  `Professor_codigo` INT NOT NULL,
+  PRIMARY KEY (`codigo`, `Professor_codigo`),
+  INDEX `fk_Professor_Professor1_idx` (`Professor_codigo` ASC),
   CONSTRAINT `fk_Professor_Professor1`
-    FOREIGN KEY (`Professor_idProfessor`)
-    REFERENCES `boletim`.`Professor` (`idProfessor`)
+    FOREIGN KEY (`Professor_codigo`)
+    REFERENCES `boletim`.`Professor` (`codigo`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION
 ) ENGINE = InnoDB;
@@ -98,26 +102,26 @@ CREATE TABLE IF NOT EXISTS `boletim`.`Professor` (
 -- Table `boletim`.`Disciplina`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `boletim`.`Disciplina` (
-  `idDisciplina` INT NOT NULL,
+  `codigo` INT NOT NULL,
   `nomeDisciplina` VARCHAR(45) NOT NULL,
   `cargaHoraria` INT NULL,
   `mediaParaPassar` FLOAT NOT NULL,
-  PRIMARY KEY (`idDisciplina`)
+  PRIMARY KEY (`codigo`)
 ) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
 -- Table `boletim`.`Conteudo`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `boletim`.`Conteudo` (
-  `idConteudo` INT NOT NULL,
+  `codigo` INT NOT NULL,
   `nomeConteudo` VARCHAR(45) NOT NULL,
   `cargaHorariaConteudo` INT NOT NULL,
-  `Disciplina_idDisciplina` INT NOT NULL,
-  PRIMARY KEY (`idConteudo`, `Disciplina_idDisciplina`),
-  INDEX `fk_Conteudo_Disciplina1_idx` (`Disciplina_idDisciplina` ASC),
+  `Disciplina_codigo` INT NOT NULL,
+  PRIMARY KEY (`codigo`, `Disciplina_codigo`),
+  INDEX `fk_Conteudo_Disciplina1_idx` (`Disciplina_codigo` ASC),
   CONSTRAINT `fk_Conteudo_Disciplina1`
-    FOREIGN KEY (`Disciplina_idDisciplina`)
-    REFERENCES `boletim`.`Disciplina` (`idDisciplina`)
+    FOREIGN KEY (`Disciplina_codigo`)
+    REFERENCES `boletim`.`Disciplina` (`codigo`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION
 ) ENGINE = InnoDB;
@@ -126,21 +130,21 @@ CREATE TABLE IF NOT EXISTS `boletim`.`Conteudo` (
 -- Table `boletim`.`Aluno_has_Disciplina`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `boletim`.`Aluno_has_Disciplina` (
-  `Aluno_matriculaAluno` INT NOT NULL,
-  `Disciplina_idDisciplina` INT NOT NULL,
+  `Aluno_codigo` INT NOT NULL,
+  `Disciplina_codigo` INT NOT NULL,
   `notaAluno` FLOAT NULL,
   `faltasAluno` INT NOT NULL,
-  PRIMARY KEY (`Aluno_matriculaAluno`, `Disciplina_idDisciplina`),
-  INDEX `fk_Aluno_has_Disciplina_Disciplina1_idx` (`Disciplina_idDisciplina` ASC),
-  INDEX `fk_Aluno_has_Disciplina_Aluno1_idx` (`Aluno_matriculaAluno` ASC),
+  PRIMARY KEY (`Aluno_codigo`, `Disciplina_codigo`),
+  INDEX `fk_Aluno_has_Disciplina_Disciplina1_idx` (`Disciplina_codigo` ASC),
+  INDEX `fk_Aluno_has_Disciplina_Aluno1_idx` (`Aluno_codigo` ASC),
   CONSTRAINT `fk_Aluno_has_Disciplina_Aluno1`
-    FOREIGN KEY (`Aluno_matriculaAluno`)
-    REFERENCES `boletim`.`Aluno` (`matriculaAluno`)
+    FOREIGN KEY (`Aluno_codigo`)
+    REFERENCES `boletim`.`Aluno` (`codigo`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Aluno_has_Disciplina_Disciplina1`
-    FOREIGN KEY (`Disciplina_idDisciplina`)
-    REFERENCES `boletim`.`Disciplina` (`idDisciplina`)
+    FOREIGN KEY (`Disciplina_codigo`)
+    REFERENCES `boletim`.`Disciplina` (`codigo`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION
 ) ENGINE = InnoDB;
@@ -149,19 +153,19 @@ CREATE TABLE IF NOT EXISTS `boletim`.`Aluno_has_Disciplina` (
 -- Table `boletim`.`Modalidade_has_Disciplina`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `boletim`.`Modalidade_has_Disciplina` (
-  `Modalidade_idModalidade` INT NOT NULL,
-  `Disciplina_idDisciplina` INT NOT NULL,
-  PRIMARY KEY (`Modalidade_idModalidade`, `Disciplina_idDisciplina`),
-  INDEX `fk_Modalidade_has_Disciplina_Disciplina1_idx` (`Disciplina_idDisciplina` ASC),
-  INDEX `fk_Modalidade_has_Disciplina_Modalidade1_idx` (`Modalidade_idModalidade` ASC),
+  `Modalidade_codigo` INT NOT NULL,
+  `Disciplina_codigo` INT NOT NULL,
+  PRIMARY KEY (`Modalidade_codigo`, `Disciplina_codigo`),
+  INDEX `fk_Modalidade_has_Disciplina_Disciplina1_idx` (`Disciplina_codigo` ASC),
+  INDEX `fk_Modalidade_has_Disciplina_Modalidade1_idx` (`Modalidade_codigo` ASC),
   CONSTRAINT `fk_Modalidade_has_Disciplina_Modalidade1`
-    FOREIGN KEY (`Modalidade_idModalidade`)
-    REFERENCES `boletim`.`Modalidade` (`idModalidade`)
+    FOREIGN KEY (`Modalidade_codigo`)
+    REFERENCES `boletim`.`Modalidade` (`codigo`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Modalidade_has_Disciplina_Disciplina1`
-    FOREIGN KEY (`Disciplina_idDisciplina`)
-    REFERENCES `boletim`.`Disciplina` (`idDisciplina`)
+    FOREIGN KEY (`Disciplina_codigo`)
+    REFERENCES `boletim`.`Disciplina` (`codigo`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION
 ) ENGINE = InnoDB;
@@ -170,19 +174,19 @@ CREATE TABLE IF NOT EXISTS `boletim`.`Modalidade_has_Disciplina` (
 -- Table `boletim`.`Professor_has_Disciplina`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `boletim`.`Professor_has_Disciplina` (
-  `Professor_idProfessor` INT NOT NULL,
-  `Disciplina_idDisciplina` INT NOT NULL,
-  PRIMARY KEY (`Professor_idProfessor`, `Disciplina_idDisciplina`),
-  INDEX `fk_Professor_has_Disciplina_Disciplina1_idx` (`Disciplina_idDisciplina` ASC),
-  INDEX `fk_Professor_has_Disciplina_Professor1_idx` (`Professor_idProfessor` ASC),
+  `Professor_codigo` INT NOT NULL,
+  `Disciplina_codigo` INT NOT NULL,
+  PRIMARY KEY (`Professor_codigo`, `Disciplina_codigo`),
+  INDEX `fk_Professor_has_Disciplina_Disciplina1_idx` (`Disciplina_codigo` ASC),
+  INDEX `fk_Professor_has_Disciplina_Professor1_idx` (`Professor_codigo` ASC),
   CONSTRAINT `fk_Professor_has_Disciplina_Professor1`
-    FOREIGN KEY (`Professor_idProfessor`)
-    REFERENCES `boletim`.`Professor` (`idProfessor`)
+    FOREIGN KEY (`Professor_codigo`)
+    REFERENCES `boletim`.`Professor` (`codigo`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Professor_has_Disciplina_Disciplina1`
-    FOREIGN KEY (`Disciplina_idDisciplina`)
-    REFERENCES `boletim`.`Disciplina` (`idDisciplina`)
+    FOREIGN KEY (`Disciplina_codigo`)
+    REFERENCES `boletim`.`Disciplina` (`codigo`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION
 ) ENGINE = InnoDB;
@@ -191,19 +195,19 @@ CREATE TABLE IF NOT EXISTS `boletim`.`Professor_has_Disciplina` (
 -- Table `boletim`.`Turma_has_Professor`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `boletim`.`Turma_has_Professor` (
-  `Turma_idTurma` INT NOT NULL,
-  `Professor_idProfessor` INT NOT NULL,
-  PRIMARY KEY (`Turma_idTurma`, `Professor_idProfessor`),
-  INDEX `fk_Turma_has_Professor_Professor1_idx` (`Professor_idProfessor` ASC),
-  INDEX `fk_Turma_has_Professor_Turma1_idx` (`Turma_idTurma` ASC),
+  `Turma_codigo` INT NOT NULL,
+  `Professor_codigo` INT NOT NULL,
+  PRIMARY KEY (`Turma_codigo`, `Professor_codigo`),
+  INDEX `fk_Turma_has_Professor_Professor1_idx` (`Professor_codigo` ASC),
+  INDEX `fk_Turma_has_Professor_Turma1_idx` (`Turma_codigo` ASC),
   CONSTRAINT `fk_Turma_has_Professor_Turma1`
-    FOREIGN KEY (`Turma_idTurma`)
-    REFERENCES `boletim`.`Turma` (`idTurma`)
+    FOREIGN KEY (`Turma_codigo`)
+    REFERENCES `boletim`.`Turma` (`codigo`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Turma_has_Professor_Professor1`
-    FOREIGN KEY (`Professor_idProfessor`)
-    REFERENCES `boletim`.`Professor` (`idProfessor`)
+    FOREIGN KEY (`Professor_codigo`)
+    REFERENCES `boletim`.`Professor` (`codigo`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION
 ) ENGINE = InnoDB;
@@ -211,5 +215,3 @@ CREATE TABLE IF NOT EXISTS `boletim`.`Turma_has_Professor` (
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
-
-
