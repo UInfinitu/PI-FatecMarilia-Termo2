@@ -1,9 +1,19 @@
 <?php
-    include "../../php/funcoes.php";
+
+include "../../php/funcoes.php";
 /*
     autenticar_admin();
-*/    
-    include "../../php/cabecalho.php";
+*/
+
+include "../banco/conexao.php";
+
+// Consulta para obter as modalidades
+$sqlModalidades = "SELECT codigo, tipoModalidade FROM modalidade ORDER BY tipoModalidade ASC;";
+$stmtModalidades = $pdo->prepare($sqlModalidades);
+$stmtModalidades->execute();
+$modalidades = $stmtModalidades->fetchAll(PDO::FETCH_ASSOC);
+
+include "../../php/cabecalho.php";
 
 ?>
 
@@ -16,20 +26,18 @@
             <div class="container-fluid gx-0">
                 <section class="container-fluid gx-0">
                     <form action="" class="cabeca">
-                        <div  class="labeln">
-                            <label for="nome">Nome: </label>
-                            <input type="text" name="nome" required>
-                         </div>
                         <div class="labeln">
-                            <label for="carga">Carga horária: </label>
-                            <input type="number" name="carga" maxlength="10" required>
+                            <label for="0">Identificador: </label>
+                            <input type="text" name="0" required>
                         </div>
                         <div class="labeln">
-                            <label for="media">Média para passar: </label>
-                            <input type="number" name="media" max="10" min="0" required>
-                        </div>
-                        <div class="labelr">
-                            <p><a href="PagConteudo.php">&nbsp;Relacionar Conteúdo&nbsp;</a></p>
+                            <label for="1">Modalidade: </label>
+                            <select name="1" required>
+                                <option value="nan" selected>Selecione uma modalidade</option>
+                                <?php foreach ($modalidades as $modalidade) { ?>
+                                    <option value="<?= $modalidade["codigo"] ?>"><?= $modalidade["tipoModalidade"] ?></option>
+                                <?php } ?>
+                            </select>
                         </div>
                         <div class="labeln">
                             <button type="submit">Cadastrar</button>
