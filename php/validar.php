@@ -5,7 +5,7 @@
 
     if(validar_admin($_POST["user"], $_POST["senha"])) {
         $_SESSION["admin"] = $_POST["user"];
-        header("Location: http://localhost/PI-FatecMarilia-Termo2/PagInst.php");
+        header("Location: http://localhost/PI-FatecMarilia-Termo2/PagAdmin.php");
     }
 
 ?>
