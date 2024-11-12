@@ -1,18 +1,13 @@
 <?php
-    include "php/funcoes.php";
+    include "../funcoes.php";
     /*
             autenticar_admin();
         */
-    include "php/cabecalho.php";
+    include "../cabecalho.php";
 
 ?>
 
-    <main class="container-fluid">
-
-        <div class="row text-center py-4">
-            <!-- <h1>(Nome da Instituição)</h1> -->
-        </div>
-
+    <main class="container-fluid my-5">
         <div class=" container-fluid menu-Container" id="menuAdm">
             <h2>Menu Administração</h2>
             <div class="menu-Card">
@@ -24,18 +19,11 @@
                 <a href="PagResponsavel.php">> Responsável</a>
             </div>
             <div class="labeln">
-                <a href="PagLogin.php" class="active">&nbsp;&nbsp;Sair&nbsp;&nbsp;</a>
+                <a href="../../PagLogin.php" class="active">&nbsp;&nbsp;Sair&nbsp;&nbsp;</a>
             </div>
         </div>
-
     </main>
 
     <?php
-        include "php/rodape.php";
+        include "../rodape.php";
     ?>
-
-    <script src="js/jquery-3.7.1.min.js"></script>
-    <script src="js/PagInst.js"></script>
-    </body>
-
-</html>

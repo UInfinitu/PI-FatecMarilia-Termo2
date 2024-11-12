@@ -1,11 +1,15 @@
-<!--  Esta página contém apenas o rodapé que é utilizado por todas as páginas do Admin -->
-
-<footer>
+<footer id="footerCopy">
     <div class="container-fluid gx-0">
-        <div id="backg">
-            <div class="col col-12">
+        <div>
+            <div class="col-12" id="txtFooter">
                 <p>&copy; 2024. Todos os direitos reservados - Powered by: Grupo Airazor</p>
             </div>
         </div>
     </div>
 </footer>
+
+<script src="../../js/jquery-3.7.1.min.js"></script>
+<script src="../../js/PagInst.js"></script>
+</body>
+
+</html>

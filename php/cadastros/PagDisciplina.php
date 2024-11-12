@@ -1,22 +1,17 @@
 <?php
-    include "php/funcoes.php";
+    include "../../php/funcoes.php";
 /*
     autenticar_admin();
 */    
-    include "php/cabecalho.php";
+    include "../../php/cabecalho.php";
 
 ?>
 
-    <main class="container-fluid gx-0">
-
-        <div class="row text-center py-4">
-            <!-- <h1>(Nome da Instituição)</h1> -->
-        </div>
-
+    <main class="container-fluid gx-0 my-5">
         <div class="container-fluid gx-0 menu-Container" id="menuAdm">
             <div id="cabecalho">
                 <p><h4>Menu Admin</h4>
-                <h6>:  Cadastrar Aluno</h6></p>
+                <h6>&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;Cadastrar Disciplina</h6></p>
             </div>
             <div class="container-fluid gx-0">
                 <section class="container-fluid gx-0">
@@ -24,13 +19,17 @@
                         <div  class="labeln">
                             <label for="nome">Nome: </label>
                             <input type="text" name="nome" required>
+                         </div>
+                        <div class="labeln">
+                            <label for="carga">Carga horária: </label>
+                            <input type="number" name="carga" maxlength="10" required>
                         </div>
                         <div class="labeln">
-                            <label for="email">Email: </label>
-                            <input type="email" name="email" required>
+                            <label for="media">Média para passar: </label>
+                            <input type="number" name="media" max="10" min="0" required>
                         </div>
                         <div class="labelr">
-                            <p><a href="PagResponsavel.php">&nbsp;Vincular Responsável&nbsp;</a></p>
+                            <p><a href="PagConteudo.php">&nbsp;Relacionar Conteúdo&nbsp;</a></p>
                         </div>
                         <div class="labeln">
                             <button type="submit">Cadastrar</button>
@@ -39,17 +38,11 @@
                 </section>
             </div>
             <div class="labeln">
-                <p><a href="PagAdmin.php">&nbsp;Voltar&nbsp;</a></p>
+                <p><a href="PagAdmin.php">&nbsp;&nbsp;Voltar&nbsp;&nbsp;</a></p>
             </div>
         </div>
     </main>
-
+  
     <?php
-        include "php/rodape.php";
+        include "../../php/rodape.php";
     ?>
-
-    <script src="js/jquery-3.7.1.min.js"></script>
-    <script src="js/PagInst.js"></script>
-</body>
-
-</html>
