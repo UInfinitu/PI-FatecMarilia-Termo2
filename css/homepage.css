@@ -19,6 +19,12 @@
     filter: drop-shadow(1px 1px 4px #fff);
 }
 
+#imgPosB{
+    right: 0px;
+    text-align: center;
+    width: 800px;
+}
+
 #linkLogin{
     display: flex;
     align-items: center;

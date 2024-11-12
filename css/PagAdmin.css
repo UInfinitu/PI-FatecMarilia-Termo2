@@ -1,5 +1,11 @@
 /*-------Estilo para as páginas de Menu (principal e usuários)-----------*/
 
+#imgPosB{
+    right: 0px;
+    text-align: center;
+    width: 800px;
+}
+
 .menu-Container{
     display: flex;
     align-items: center;
@@ -68,41 +74,49 @@ form {
     font-size: 14px;
     border: 2px solid rgb(128, 128, 128);
     border-radius: 6px;
-    padding: 10px;
+    padding: 20px;
     margin-bottom: 20px;
     background-color: #a3f3db;
     justify-content: center;
 }
 
 .labeln{
-    padding: 2px;
+    padding: 4px;
 
 }
 
 .labeln a{
+    background-color: aliceblue;
     text-decoration: none;
     color: #363535;
+    font-size: 24px;
+}
 
+.labelr a{
+    background-color: aliceblue;
+    text-decoration: none;
+    color: #363535;
+    font-size: 18px;
 }
 
 /*-------Estilo para o final de todas as páginas (Footer)---------------------*/
 
 footer div {
-    margin-top: 80px;
-    color: #fff;
+    color: #000;
     font-size: 12px;
-    background-color: #363535;
-    
+    background-image: linear-gradient( to right, #000, #034f73, #288a87, #6cf3ca, #fff);
 }
 
 .col {
+    margin-top: 2em;
     float: left;
     padding-left: var(--gutter);
     padding-right: var(--gutter);
 }
 
-.col-6{
-    width: 50%;
+.col-12 p{
+    margin-top: 1em;
+    text-align: center;
 }
 
 /*------Final para os estilos de rodapé --------------------------*/

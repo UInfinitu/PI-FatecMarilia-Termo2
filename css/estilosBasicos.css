@@ -17,7 +17,11 @@ section{
 #logo{
     width: 10em;
 }
-
+/*
+#logoN{
+    width: 20em;
+}
+*/
 #navItens li a{
     text-shadow: #fff 1px 1px 4px;
     color: #034f73;
