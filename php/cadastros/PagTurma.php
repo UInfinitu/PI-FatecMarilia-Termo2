@@ -21,11 +21,14 @@ include "../../php/cabecalho.php";
         <div class="container-fluid gx-0 menu-Container" id="menuAdm">
             <div id="cabecalho">
                 <p><h4>Menu Admin</h4>
-                <h6>&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;Cadastrar Disciplina</h6></p>
+                <h6>&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;Cadastrar Turma</h6></p>
             </div>
             <div class="container-fluid gx-0">
                 <section class="container-fluid gx-0">
-                    <form action="" class="cabeca">
+                    <form action="../intermediarios/adicionarIntermediario.php" class="cabeca">
+                        <input type="hidden" name="tabela" value="turma">
+                        <input type="hidden" name="listaCampos" value="identificadorTurma,Modalidade_codigo">
+
                         <div class="labeln">
                             <label for="0">Identificador: </label>
                             <input type="text" name="0" required>

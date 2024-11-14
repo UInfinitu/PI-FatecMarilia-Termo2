@@ -5,6 +5,12 @@
 */    
     include "../../php/cabecalho.php";
 
+    include "../banco/conexao.php";
+
+    $sql = "SELECT codigo, nomeAluno FROM aluno ORDER BY nomeAluno ASC;";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+    $alunos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
     <main class="container-fluid gx-0 my-5">
@@ -15,16 +21,17 @@
             </div>
             <div class="container-fluid gx-0">
                 <section class="container-fluid gx-0">
-                    <form action="" class="cabeca">
+                    <form action="../intermediarios/adicionarIntermediario.php" class="cabeca">
+                        <input type="hidden" name="tabela" value="responsavel">
+                        <input type="hidden" name="listaCampos" value="nomeResponsavel,emailResponsavel">
+
                         <div  class="labeln">
-                            <label for="nome">Nome: </label>
-                            <input type="text" name="nome" required>
+                            <label for="0">Nome: </label>
+                            <input type="text" name="0" required>
                         </div>
                         <div class="labeln">
-                            <label for="email">Email: </label>
-                            <input type="email" name="email" required>
-                        </div>
-                        <div class="labeln">
+                            <label for="1">Email: </label>
+                            <input type="email" name="1" required>
                         </div>
                         <div class="labeln">
                             <button type="submit">Cadastrar</button>

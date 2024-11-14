@@ -88,14 +88,7 @@ CREATE TABLE IF NOT EXISTS `boletim`.`Professor` (
   `nomeProfessor` VARCHAR(45) NOT NULL,
   `emailProfessor` VARCHAR(45) NOT NULL,
   `titulacao` VARCHAR(45) NOT NULL,
-  `Professor_codigo` INT NOT NULL,
-  PRIMARY KEY (`codigo`, `Professor_codigo`),
-  INDEX `fk_Professor_Professor1_idx` (`Professor_codigo` ASC),
-  CONSTRAINT `fk_Professor_Professor1`
-    FOREIGN KEY (`Professor_codigo`)
-    REFERENCES `boletim`.`Professor` (`codigo`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION
+  PRIMARY KEY (`codigo`)
 ) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
