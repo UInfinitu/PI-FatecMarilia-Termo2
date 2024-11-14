@@ -35,10 +35,7 @@
             </div>
         </div>
     </main>
-    <div class="labeln">
-        <p>&nbsp;</p>
-    </div>
-
+    
     <?php
         include "../../php/rodape.php";
     ?>

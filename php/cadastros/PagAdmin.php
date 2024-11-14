@@ -14,7 +14,7 @@
                 <a href="PagProfessor.php">> Professor</a>
                 <a href="PagDisciplina.php">> Disciplina</a>
                 <a href="PagConteudo.php">> Conteúdo</a>
-                <a href="#">> Turma - desenvolver&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                <a href="PagTurma.php">> Turma&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
                 <a href="PagAluno.php">> Aluno&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
                 <a href="PagResponsavel.php">> Responsável</a>
             </div>
@@ -27,3 +27,4 @@
     <?php
         include "../rodape.php";
     ?>
+    
