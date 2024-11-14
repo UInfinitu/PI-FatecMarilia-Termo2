@@ -15,18 +15,21 @@
             </div>
             <div class="container-fluid gx-0">
                 <section class="container-fluid gx-0">
-                    <form action="" class="cabeca">
+                    <form action="../intermediarios/adicionarIntermediario.php" class="cabeca">
+                        <input type="hidden" name="tabela" value="disciplina">
+                        <input type="hidden" name="listaCampos" value="nomeDisciplina,cargaHoraria,mediaParaPassar">
+
                         <div  class="labeln">
-                            <label for="nome">Nome: </label>
-                            <input type="text" name="nome" required>
+                            <label for="0">Nome: </label>
+                            <input type="text" name="0" required>
                          </div>
                         <div class="labeln">
-                            <label for="carga">Carga horária: </label>
-                            <input type="number" name="carga" maxlength="10" required>
+                            <label for="1">Carga horária: </label>
+                            <input type="number" name="1" maxlength="10" required>
                         </div>
                         <div class="labeln">
-                            <label for="media">Média para passar: </label>
-                            <input type="number" name="media" max="10" min="0" required>
+                            <label for="2">Média para passar: </label>
+                            <input type="number" name="2" max="10" min="0" required>
                         </div>
                         <div class="labelr">
                             <p><a href="PagConteudo.php">&nbsp;Relacionar Conteúdo&nbsp;</a></p>

@@ -18,7 +18,6 @@ $stmtModalidades->execute();
 $modalidades = $stmtModalidades->fetchAll(PDO::FETCH_ASSOC);
 
 include "../cabecalho.php";
-
 ?>
 
 <main class="container-fluid gx-0 my-5">

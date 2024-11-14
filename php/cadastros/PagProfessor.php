@@ -14,18 +14,21 @@
             </div>
             <div class="container-fluid gx-0">
                 <section class="container-fluid gx-0">
-                    <form action="" class="cabeca">
+                    <form action="../intermediarios/adicionarIntermediario.php" class="cabeca">
+                        <input type="hidden" name="tabela" value="professor">
+                        <input type="hidden" name="listaCampos" value="nomeProfessor,emailProfessor,titulacao">
+
                         <div  class="labeln">
-                            <label for="nome">Nome: </label>
-                            <input type="text" name="nome" required>
+                            <label for="0">Nome: </label>
+                            <input type="text" name="0" required>
                         </div>
                         <div class="labeln">
-                            <label for="email">Email: </label>
-                            <input type="email" name="email" required>
+                            <label for="1">Email: </label>
+                            <input type="email" name="1" required>
                         </div>
                         <div class="labeln">
-                            <label for="titulacao">Titulação: </label>
-                            <select name="titulacao">
+                            <label for="2">Titulação: </label>
+                            <select name="2">
                                 <option value="nan" selected>Selecione sua titulação</option>
                                 <option value="ng">Não-Graduado</option>
                                 <option value="g">Graduado</option>
@@ -35,10 +38,12 @@
                                 <option value="pd">Pós-Doutorado</option>
                             </select>
                         </div>
+                        <!--
                         <div  class="labeln">
-                            <label for="coordena">Coordenador (S / N): </label>
-                            <input type="text" name="coordena" maxlength="1" required>
+                            <label for="3">Coordenador (S / N): </label>
+                            <input type="text" name="3" maxlength="1" required>
                         </div>
+                        -->
                         <div class="labeln">
                             <button type="submit">Cadastrar</button>
                         </div>
