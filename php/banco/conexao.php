@@ -2,7 +2,6 @@
 
     $tipo_banco = "mysql";
     $servidor = "localhost"; // Endereço do servidor
-    $porta = 3306; // Número da porta do servidor
     $banco = "boletim"; // Nome do banco de dados a ser usado
     $usuario = "root"; // Usuário que acessará o banco
     $senha = ""; // Senha cadastrada na criação do BD

@@ -30,12 +30,12 @@
                             <label for="2">Titulação: </label>
                             <select name="2">
                                 <option value="nan" selected>Selecione sua titulação</option>
-                                <option value="ng">Não-Graduado</option>
-                                <option value="g">Graduado</option>
-                                <option value="e">Especialista</option>
-                                <option value="m">Mestre</option>
-                                <option value="d">Doutor</option>
-                                <option value="pd">Pós-Doutorado</option>
+                                <option value="Não-Graduado">Não-Graduado</option>
+                                <option value="Graduadog">Graduado</option>
+                                <option value="Especialista">Especialista</option>
+                                <option value="Mestre">Mestre</option>
+                                <option value="Doutor">Doutor</option>
+                                <option value="Pós-Doutorado">Pós-Doutorado</option>
                             </select>
                         </div>
                         <!--
