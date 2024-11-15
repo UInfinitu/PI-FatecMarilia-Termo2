@@ -21,7 +21,7 @@
             </div>
             <div class="container-fluid gx-0">
                 <section class="container-fluid gx-0">
-                    <form action="../intermediarios/adicionarIntermediario.php" class="cabeca">
+                    <form action="../intermediario.php" class="cabeca">
                         <input type="hidden" name="tabela" value="conteudo">
                         <input type="hidden" name="listaCampos" value="nomeConteudo,cargaHorariaConteudo,Disciplina_codigo">
 

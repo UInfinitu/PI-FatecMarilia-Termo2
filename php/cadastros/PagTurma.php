@@ -25,7 +25,7 @@ include "../../php/cabecalho.php";
             </div>
             <div class="container-fluid gx-0">
                 <section class="container-fluid gx-0">
-                    <form action="../intermediarios/adicionarIntermediario.php" class="cabeca">
+                    <form action="../intermediario.php" class="cabeca">
                         <input type="hidden" name="tabela" value="turma">
                         <input type="hidden" name="listaCampos" value="identificadorTurma,Modalidade_codigo">
 

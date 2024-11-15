@@ -9,6 +9,7 @@ include "crud/adicionar.php";
 include "crud/alterar.php";
 
 if (isset($_GET["codigo"])){
+    $listaValores[count($listaValores)] = $_GET["codigo"];
     alterar($_GET['tabela'], $_GET["listaCampos"], $listaValores);
 } else{
     adicionar($_GET['tabela'], $_GET["listaCampos"], $listaValores);

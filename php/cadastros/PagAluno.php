@@ -41,11 +41,11 @@ include "../cabecalho.php";
 
                     <input type="hidden" name="tabela" value="aluno"> 
                     <?= isset($_GET["codigo"]) ? "<input type='hidden' name='codigo' value= '" . $aluno["codigo"] ."'>"  : "" ?> 
-                    <input type="hidden" name="listaCampos" value="<?= isset($_GET["codigo"]) ? "codigo," : "" ?>nomeAluno,emailAluno,Turma_codigo,Turma_Modalidade_codigo">
+                    <input type="hidden" name="listaCampos" value="nomeAluno,emailAluno,Turma_codigo,Turma_Modalidade_codigo<?= isset($_GET["codigo"]) ? ",codigo" : "" ?>" step>
 
                     <div class="labeln">
                         <label for="0">Nome: </label>
-                        <input type="text" name="0" <?= isset($_GET["codigo"]) ? "value= ". $aluno["nomeAluno"] : "" ?> required>
+                        <input type="text" name="0" <?= isset($_GET["codigo"]) ? "value= '". $aluno["nomeAluno"]."'" : "" ?> required>
                     </div>
                     <div class="labeln">
                         <label for="1">Email: </label>
@@ -56,7 +56,7 @@ include "../cabecalho.php";
                         <select name="2" required>
                             <option value="nan">Selecione uma turma</option>
                             <?php foreach ($turmas as $turma) { ?>
-                                <option value="<?= $turma["codigo"] ?>" <?= $aluno["Turma_codigo"] == $turma["codigo"] ? "selected" : "" ?>><?= $turma["identificadorTurma"] ?></option>
+                                <option value="<?= $turma["codigo"] ?>" <?= isset($_GET["codigo"]) ? ($aluno["Turma_codigo"] == $turma["codigo"] ? "selected" : "") : "" ?>><?= $turma["identificadorTurma"] ?></option>
                             <?php } ?>
                         </select>
                     </div>
@@ -65,7 +65,7 @@ include "../cabecalho.php";
                         <select name="3" required>
                             <option value="nan" selected>Selecione uma modalidade</option>
                             <?php foreach ($modalidades as $modalidade) { ?>
-                                <option value="<?= $modalidade["codigo"] ?>" <?= $aluno["Turma_Modalidade_codigo"] == $modalidade["codigo"] ? "selected" : "" ?>><?= $modalidade["tipoModalidade"] ?></option>
+                                <option value="<?= $modalidade["codigo"] ?>" <?= isset($_GET["codigo"]) ? ($aluno["Turma_Modalidade_codigo"] == $modalidade["codigo"] ? "selected" : "") : "" ?>><?= $modalidade["tipoModalidade"] ?></option>
                             <?php } ?>
                         </select>
                     </div>

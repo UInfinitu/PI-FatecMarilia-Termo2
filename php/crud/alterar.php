@@ -5,18 +5,20 @@
     $listaPlaceholders = [];
     $listaValoresSeguros = [];
     $sql = "UPDATE $tabela SET ";
-    for ($i = 1; $i < count($listacampos); $i++) {
+    for ($i = 0; $i < count($listacampos) - 1; $i++) {
         $listaPlaceholders[] = "$listacampos[$i] = :$listacampos[$i]";
     }
     $sql .= implode(", ", $listaPlaceholders);
-    $sql .= " WHERE $listacampos[0] = :$listacampos[0];";
+    $sql .= " WHERE ".end($listacampos)." = :".end($listacampos).";";
     for ($i = 0; $i < count($listavalores); $i++) {
         $listaValoresSeguros[$i] = htmlspecialchars($listavalores[$i]);
     }
+    echo $sql;
     $comando = $pdo->prepare($sql);
     for ($i = 0; $i < count($listacampos); $i++) {
         $comando->bindParam(":$listacampos[$i]", $listaValoresSeguros[$i]);
     }
+
     $sucesso = $comando->execute();
     return $sucesso;
 }
