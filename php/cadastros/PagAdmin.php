@@ -1,8 +1,7 @@
 <?php
 include "../funcoes.php";
-/*
-            autenticar_admin();
-        */
+    autenticar_admin();
+    
 include "../cabecalho.php";
 
 ?>

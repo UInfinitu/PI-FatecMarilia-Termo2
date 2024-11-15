@@ -1,13 +1,12 @@
 <?php
 
 include "../../php/funcoes.php";
-/*
     autenticar_admin();
-*/
+
 
 include "../banco/conexao.php";
 
-$sql = "SELECT t.identificadorTurma,m.tipoModalidade FROM turma t INNER JOIN modalidade m ON t.Modalidade_codigo = m.codigo ORDER BY identificadorTurma;";
+$sql = "SELECT t.codigo,t.identificadorTurma,m.tipoModalidade FROM turma t INNER JOIN modalidade m ON t.Modalidade_codigo = m.codigo ORDER BY Modalidade_codigo;";
 $comando = $pdo->prepare($sql);
 $comando->execute();
 $turmas = $comando->fetchAll();
@@ -31,7 +30,6 @@ include "../../php/cabecalho.php";
                         <tr class="justify-content-evenly">
                             <th>Turma</th>
                             <th>Modalidade</th>
-                            <th>Ações</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -39,11 +37,6 @@ include "../../php/cabecalho.php";
                         <tr>
                             <td><?= $turma["identificadorTurma"] ?></td>
                             <td><?= $turma["tipoModalidade"] ?></td>
-                            <td>
-                                <a href="">Alterar</a>
-                                |
-                                <a href="">Excluir</a>
-                            </td>
                         </tr>
                         <?php } ?>
                     </tbody>

@@ -1,8 +1,6 @@
 <?php
 include "../funcoes.php";
-/*
-            autenticar_admin();
-        */
+    autenticar_admin();
 
 include "../banco/conexao.php";
 
@@ -44,7 +42,7 @@ include "../cabecalho.php";
                             <td>
                                 <a href="../cadastros/PagAluno.php?codigo=<?= $aluno["codigo"] ?>">Alterar</a>
                                 |
-                                <a href="">Excluir</a>
+                                <a href="../crud/excluir.php?tabela=aluno&codigo=<?= $aluno["codigo"] ?>&caminho=../listar/PagAluno.php">Excluir</a>
                             </td>
                         </tr>
                         <?php } ?>

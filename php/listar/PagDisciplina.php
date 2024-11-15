@@ -1,13 +1,12 @@
 <?php
     include "../../php/funcoes.php";
-/*
     autenticar_admin();
-*/    
+    
     include "../../php/cabecalho.php";
 
     include "../banco/conexao.php";
 
-$sql = "SELECT nomeDisciplina,cargaHoraria,mediaParaPassar FROM disciplina ORDER BY nomeDisciplina;";
+$sql = "SELECT codigo,nomeDisciplina,cargaHoraria,mediaParaPassar FROM disciplina ORDER BY nomeDisciplina;";
 $comando = $pdo->prepare($sql);
 $comando->execute();
 $disciplinas = $comando->fetchAll();
@@ -39,9 +38,9 @@ $disciplinas = $comando->fetchAll();
                             <td><?= $disciplina["cargaHoraria"] ?></td>
                             <td><?= $disciplina["mediaParaPassar"] ?></td>
                             <td>
-                                <a href="">Alterar</a>
+                                <a href="../cadastros/PagDisciplina.php?codigo=<?= $disciplina["codigo"] ?>">Alterar</a>
                                 |
-                                <a href="">Excluir</a>
+                                <a href="../crud/excluir.php?tabela=disciplina&codigo=<?= $disciplina["codigo"] ?>&caminho=../listar/PagDisciplina.php">Excluir</a>
                             </td>
                         </tr>
                         <?php } ?>

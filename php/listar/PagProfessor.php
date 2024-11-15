@@ -1,13 +1,12 @@
 <?php
     include "../funcoes.php";
-    /*
-            autenticar_admin();
-    */
+    autenticar_admin();
+
     include "../cabecalho.php";
 
     include "../banco/conexao.php";
 
-    $sql = "SELECT nomeProfessor,emailProfessor,titulacao FROM professor ORDER BY nomeProfessor;";
+    $sql = "SELECT codigo,nomeProfessor,emailProfessor,titulacao FROM professor ORDER BY nomeProfessor;";
     $comando = $pdo->prepare($sql);
     $comando->execute();
     $professores = $comando->fetchAll();
@@ -39,9 +38,9 @@
                             <td><?= $professor["emailProfessor"] ?></td>
                             <td><?= $professor["titulacao"] ?></td>
                             <td>
-                                <a href="">Alterar</a>
+                                <a href="../cadastros/PagProfessor.php?codigo=<?= $professor["codigo"] ?>">Alterar</a>
                                 |
-                                <a href="">Excluir</a>
+                                <a href="../crud/excluir.php?tabela=professor&codigo=<?= $professor["codigo"] ?>&caminho=../listar/PagProfessor.php">Excluir</a>
                             </td>
                         </tr>
                         <?php } ?>

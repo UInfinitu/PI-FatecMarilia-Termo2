@@ -1,13 +1,12 @@
 <?php
     include "../../php/funcoes.php";
-/*
     autenticar_admin();
-*/    
+    
     include "../../php/cabecalho.php";
 
     include "../banco/conexao.php";
 
-    $sql = "SELECT nomeResponsavel,emailResponsavel FROM responsavel ORDER BY nomeResponsavel;";
+    $sql = "SELECT codigo,nomeResponsavel,emailResponsavel FROM responsavel ORDER BY nomeResponsavel;";
     $comando = $pdo->prepare($sql);
     $comando->execute();
     $responsaveis = $comando->fetchAll();
@@ -37,9 +36,9 @@
                             <td><?= $responsavel["nomeResponsavel"] ?></td>
                             <td><?= $responsavel["emailResponsavel"] ?></td>
                             <td>
-                                <a href="">Alterar</a>
+                                <a href="../cadastros/PagResponsavel.php?codigo=<?= $responsavel["codigo"] ?>">Alterar</a>
                                 |
-                                <a href="">Excluir</a>
+                                <a href="../crud/excluir.php?tabela=responsavel&codigo=<?= $responsavel["codigo"] ?>&caminho=../listar/PagResponsavel.php">Excluir</a>
                             </td>
                         </tr>
                         <?php } ?>

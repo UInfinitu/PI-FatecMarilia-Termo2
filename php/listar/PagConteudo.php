@@ -1,13 +1,12 @@
 <?php
     include "../../php/funcoes.php";
-/*
     autenticar_admin();
-*/    
+    
     include "../../php/cabecalho.php";
 
     include "../banco/conexao.php";
 
-$sql = "SELECT c.nomeConteudo,c.cargaHorariaConteudo,d.nomeDisciplina FROM conteudo c INNER JOIN disciplina d ON c.Disciplina_codigo = d.codigo ORDER BY nomeConteudo;";
+$sql = "SELECT c.codigo,c.nomeConteudo,c.cargaHorariaConteudo,d.nomeDisciplina FROM conteudo c INNER JOIN disciplina d ON c.Disciplina_codigo = d.codigo ORDER BY nomeConteudo;";
 $comando = $pdo->prepare($sql);
 $comando->execute();
 $conteudos = $comando->fetchAll();
@@ -39,9 +38,9 @@ $conteudos = $comando->fetchAll();
                             <td><?= $conteudo["cargaHorariaConteudo"] ?></td>
                             <td><?= $conteudo["nomeDisciplina"] ?></td>
                             <td>
-                                <a href="">Alterar</a>
+                                <a href="../cadastros/PagConteudo.php?codigo=<?= $conteudo["codigo"] ?>">Alterar</a>
                                 |
-                                <a href="">Excluir</a>
+                                <a href="../crud/excluir.php?tabela=conteudo&codigo=<?= $conteudo["codigo"] ?>&caminho=../listar/PagConteudo.php"">Excluir</a>
                             </td>
                         </tr>
                         <?php } ?>

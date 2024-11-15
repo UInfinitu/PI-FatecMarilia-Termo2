@@ -28,7 +28,7 @@
                     <?php foreach ($disciplinas as $disciplina) { ?>
                         <li>
                             <button class="btn btn-primary mb-2 open-modal" 
-                                    data-disciplina="<?= $disciplina['codigo'] ?>" 
+                                    data-disciplina="<?= $disciplina['disciplinaCodigo'] ?>" 
                                     data-aluno="<?= $alunoId ?>">
                                 <?= $disciplina["nomeDisciplina"] ?>
                             </button>

@@ -1,8 +1,6 @@
 <?php
 include "../funcoes.php";
-/*
-            autenticar_admin();
-        */
+    autenticar_admin();
 
 include "../banco/conexao.php";
 
@@ -41,7 +39,7 @@ include "../cabecalho.php";
 
                     <input type="hidden" name="tabela" value="aluno"> 
                     <?= isset($_GET["codigo"]) ? "<input type='hidden' name='codigo' value= '" . $aluno["codigo"] ."'>"  : "" ?> 
-                    <input type="hidden" name="listaCampos" value="nomeAluno,emailAluno,Turma_codigo,Turma_Modalidade_codigo<?= isset($_GET["codigo"]) ? ",codigo" : "" ?>" step>
+                    <input type="hidden" name="listaCampos" value="nomeAluno,emailAluno,Turma_codigo,Turma_Modalidade_codigo<?= isset($_GET["codigo"]) ? ",codigo" : "" ?>">
 
                     <div class="labeln">
                         <label for="0">Nome: </label>
@@ -73,7 +71,7 @@ include "../cabecalho.php";
                         <p><a href="PagResponsavel.php">&nbsp;Vincular Responsável&nbsp;</a></p>
                     </div>
                     <div class="labeln">
-                        <button type="submit"> <?= isset($_GET["codigo"]) ? "Alterar" : "Cadastrar" ?></button>
+                        <button type="submit"><?= isset($_GET["codigo"]) ? "Alterar" : "Cadastrar" ?></button>
                     </div>
                 </form>
             </section>
