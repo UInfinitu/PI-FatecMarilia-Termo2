@@ -25,22 +25,6 @@
     
 }
 
-.menu-Card div button{
-    text-align: center;
-    background-color: #6cf3ca;
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    color: #000; 
-    align-items: center;
-    font-size: large;
-}
-
-.menu-Card div button:hover { 
-    background-color:#D6D6D6;
-    color: #363535;
-}
-
 .dropdown button{
     border: none;
     border-radius: 6px;

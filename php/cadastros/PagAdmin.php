@@ -12,7 +12,7 @@ include "../cabecalho.php";
         <div class="menu-Card">
             <!-- Dropdown para Professor -->
             <div class="dropdown my-1">
-                <button class="dropdown-toggle col-12" type="button" id="dropdownProfessor" data-bs-toggle="dropdown" aria-expanded="false">
+                <button class="dropdown-toggle col-12" type="button" id="dropdownProfessor botao" data-bs-toggle="dropdown" aria-expanded="false">
                     Professor
                 </button>
                 <ul class="dropdown-menu col-12 text-center" aria-labelledby="dropdownProfessor">
